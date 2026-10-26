@@ -1,0 +1,7 @@
+{
+  "_meta": {
+    "type": "TEST_DATA",
+    "description": "Valid SAR but ERA5 API returns 404"
+  },
+  "wind": null
+}

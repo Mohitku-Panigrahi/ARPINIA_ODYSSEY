@@ -1,0 +1,45 @@
+# Python / Environment
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+venv/
+env/
+.venv/
+
+# Node / Frontend
+node_modules/
+.next/
+out/
+build/
+dist/
+
+# Geospatial & Large Data Binaries (Never commit raw rasters or models)
+*.tif
+*.tiff
+*.nc
+*.grib
+*.grib2
+*.shp
+*.geojson
+*.sqlite
+*.db
+*.pt
+*.pth
+*.safetensors
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Added during hygiene cleanup
+*.log
+*.tmp
+*.bak
+.pytest_cache/
+.env.*
+!.env.example
+
+# Allow small test fixtures
+!tests/fixtures/*.nc
+!tests/fixtures/*.tif

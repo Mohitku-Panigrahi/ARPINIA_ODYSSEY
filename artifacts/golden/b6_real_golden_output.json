@@ -1,0 +1,208 @@
+{
+  "scenario_id": "SIH-ZENODO-ALPHA",
+  "algorithm_version": "v1.0.0",
+  "config_version": "mc_v1",
+  "total_attempted_runs": 25,
+  "valid_runs": 25,
+  "failed_runs": 0,
+  "valid_no_candidate_runs": 0,
+  "failure_reason_counts": {},
+  "convergence": {
+    "achieved": false,
+    "runs_executed": 25,
+    "checkpoints": [
+      25
+    ],
+    "top_candidate_deltas": {},
+    "consecutive_converged_checks": 0
+  },
+  "candidate_stabilities": [
+    {
+      "mmsi": "223456780",
+      "nominal_rank": null,
+      "nominal_score": null,
+      "nominal_coverage": null,
+      "presence_rate": 1.0,
+      "ranked_rate": 1.0,
+      "insufficient_evidence_rate": 0.0,
+      "top1_stability": 1.0,
+      "top3_stability": 1.0,
+      "conditional_top1_given_present": 1.0,
+      "conditional_top1_given_ranked": 1.0,
+      "top1_wilson_ci": {
+        "estimate": 1.0,
+        "lower_bound": 0.8668035060468212,
+        "upper_bound": 1.0,
+        "confidence_level": 0.95
+      },
+      "top3_wilson_ci": {
+        "estimate": 1.0,
+        "lower_bound": 0.8668035060468212,
+        "upper_bound": 1.0,
+        "confidence_level": 0.95
+      },
+      "presence_wilson_ci": {
+        "estimate": 1.0,
+        "lower_bound": 0.8668035060468212,
+        "upper_bound": 1.0,
+        "confidence_level": 0.95
+      },
+      "mean_rank": 1.0,
+      "median_rank": 1.0,
+      "rank_std": 0.0,
+      "mean_score": 0.31118084485211167,
+      "score_std": 0.003041039948412148,
+      "stability_class": "HIGH_STABILITY"
+    },
+    {
+      "mmsi": "323456781",
+      "nominal_rank": null,
+      "nominal_score": null,
+      "nominal_coverage": null,
+      "presence_rate": 1.0,
+      "ranked_rate": 1.0,
+      "insufficient_evidence_rate": 0.0,
+      "top1_stability": 0.0,
+      "top3_stability": 1.0,
+      "conditional_top1_given_present": 0.0,
+      "conditional_top1_given_ranked": 0.0,
+      "top1_wilson_ci": {
+        "estimate": 0.0,
+        "lower_bound": 0.0,
+        "upper_bound": 0.13319649395317873,
+        "confidence_level": 0.95
+      },
+      "top3_wilson_ci": {
+        "estimate": 1.0,
+        "lower_bound": 0.8668035060468212,
+        "upper_bound": 1.0,
+        "confidence_level": 0.95
+      },
+      "presence_wilson_ci": {
+        "estimate": 1.0,
+        "lower_bound": 0.8668035060468212,
+        "upper_bound": 1.0,
+        "confidence_level": 0.95
+      },
+      "mean_rank": 2.0,
+      "median_rank": 2.0,
+      "rank_std": 0.0,
+      "mean_score": 0.31118084485211167,
+      "score_std": 0.003041039948412148,
+      "stability_class": "LOW_STABILITY"
+    },
+    {
+      "mmsi": "423456782",
+      "nominal_rank": null,
+      "nominal_score": null,
+      "nominal_coverage": null,
+      "presence_rate": 1.0,
+      "ranked_rate": 1.0,
+      "insufficient_evidence_rate": 0.0,
+      "top1_stability": 0.0,
+      "top3_stability": 1.0,
+      "conditional_top1_given_present": 0.0,
+      "conditional_top1_given_ranked": 0.0,
+      "top1_wilson_ci": {
+        "estimate": 0.0,
+        "lower_bound": 0.0,
+        "upper_bound": 0.13319649395317873,
+        "confidence_level": 0.95
+      },
+      "top3_wilson_ci": {
+        "estimate": 1.0,
+        "lower_bound": 0.8668035060468212,
+        "upper_bound": 1.0,
+        "confidence_level": 0.95
+      },
+      "presence_wilson_ci": {
+        "estimate": 1.0,
+        "lower_bound": 0.8668035060468212,
+        "upper_bound": 1.0,
+        "confidence_level": 0.95
+      },
+      "mean_rank": 3.0,
+      "median_rank": 3.0,
+      "rank_std": 0.0,
+      "mean_score": 0.31118084485211167,
+      "score_std": 0.003041039948412148,
+      "stability_class": "LOW_STABILITY"
+    },
+    {
+      "mmsi": "523456783",
+      "nominal_rank": null,
+      "nominal_score": null,
+      "nominal_coverage": null,
+      "presence_rate": 1.0,
+      "ranked_rate": 1.0,
+      "insufficient_evidence_rate": 0.0,
+      "top1_stability": 0.0,
+      "top3_stability": 0.0,
+      "conditional_top1_given_present": 0.0,
+      "conditional_top1_given_ranked": 0.0,
+      "top1_wilson_ci": {
+        "estimate": 0.0,
+        "lower_bound": 0.0,
+        "upper_bound": 0.13319649395317873,
+        "confidence_level": 0.95
+      },
+      "top3_wilson_ci": {
+        "estimate": 0.0,
+        "lower_bound": 0.0,
+        "upper_bound": 0.13319649395317873,
+        "confidence_level": 0.95
+      },
+      "presence_wilson_ci": {
+        "estimate": 1.0,
+        "lower_bound": 0.8668035060468212,
+        "upper_bound": 1.0,
+        "confidence_level": 0.95
+      },
+      "mean_rank": 4.0,
+      "median_rank": 4.0,
+      "rank_std": 0.0,
+      "mean_score": 0.31118084485211167,
+      "score_std": 0.003041039948412148,
+      "stability_class": "UNSTABLE"
+    },
+    {
+      "mmsi": "123456789",
+      "nominal_rank": null,
+      "nominal_score": null,
+      "nominal_coverage": null,
+      "presence_rate": 0.8,
+      "ranked_rate": 0.8,
+      "insufficient_evidence_rate": 0.0,
+      "top1_stability": 0.0,
+      "top3_stability": 0.0,
+      "conditional_top1_given_present": 0.0,
+      "conditional_top1_given_ranked": 0.0,
+      "top1_wilson_ci": {
+        "estimate": 0.0,
+        "lower_bound": 0.0,
+        "upper_bound": 0.13319649395317873,
+        "confidence_level": 0.95
+      },
+      "top3_wilson_ci": {
+        "estimate": 0.0,
+        "lower_bound": 0.0,
+        "upper_bound": 0.13319649395317873,
+        "confidence_level": 0.95
+      },
+      "presence_wilson_ci": {
+        "estimate": 0.8,
+        "lower_bound": 0.6086866446346176,
+        "upper_bound": 0.9113954589934752,
+        "confidence_level": 0.95
+      },
+      "mean_rank": 5.0,
+      "median_rank": 5.0,
+      "rank_std": 0.0,
+      "mean_score": 0.30288252239634994,
+      "score_std": 7.773104890625278e-05,
+      "stability_class": "UNSTABLE"
+    }
+  ],
+  "nominal_leader_mmsi": null,
+  "nominal_leader_stable": "INSUFFICIENT_EVIDENCE"
+}

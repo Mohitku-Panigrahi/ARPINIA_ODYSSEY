@@ -1,0 +1,274 @@
+import json
+
+schema = {
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Evidence Contract",
+  "type": "object",
+  "additionalProperties": False,
+  "properties": {
+    "schema_version": { "type": "string" },
+    "evidence_schema_version": { "type": "string" },
+    "case_id": { "type": "string" },
+    "investigation_id": { "type": "string" },
+    "scenario_id": { "type": "string" },
+    "dataset_mode": { "enum": ["REAL_AIS", "SYNTHETIC_DEMO"] },
+    "generated_at": { "type": "string", "format": "date-time" },
+
+    "status": {
+      "type": "object",
+      "properties": {
+        "pipeline_status": { "type": "string" },
+        "attribution_status": { "type": "string" },
+        "overall_confidence": { "type": "number", "minimum": 0, "maximum": 1 }
+      },
+      "additionalProperties": True
+    },
+
+    "incident": {
+      "type": "object",
+      "properties": {
+        "detected_at": { "type": "string", "format": "date-time" },
+        "location": {
+          "type": "object",
+          "properties": {
+            "latitude": { "type": "number", "minimum": -90, "maximum": 90 },
+            "longitude": { "type": "number", "minimum": -180, "maximum": 180 }
+          }
+        },
+        "geometry": { "type": "object" }
+      },
+      "additionalProperties": True
+    },
+
+    "sar": {
+      "type": "object",
+      "properties": {
+        "source": { "type": "string" },
+        "scene_id": { "type": "string" },
+        "acquisition_timestamp": { "type": "string" },
+        "processing_version": { "type": "string" },
+        "spill_geometry": { "type": "object" },
+        "area_km2": { "type": "number" },
+        "segmentation": { "type": "object" },
+        "look_alike_assessment": { "type": "object" }
+      },
+      "additionalProperties": True
+    },
+
+    "environment": {
+      "type": "object",
+      "additionalProperties": True
+    },
+
+    "drift": {
+      "type": "object",
+      "additionalProperties": True
+    },
+
+    "ais": {
+      "type": "object",
+      "additionalProperties": True
+    },
+
+    "candidates": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/Candidate" }
+    },
+
+    "decision_support": {
+      "type": "object",
+      "additionalProperties": True
+    },
+    
+    "limitations": { "type": "array", "items": { "type": "string" } },
+
+    "provenance": {
+      "type": "object",
+      "properties": {
+        "input_hashes": { "type": "array" },
+        "source_datasets": { "type": "array" },
+        "algorithm_versions": { "type": "array" },
+        "model_versions": { "type": "array" },
+        "configuration_hash": { "type": "string" },
+        "global_b6_ensemble_metadata": {
+            "type": "object",
+            "properties": {
+                "runs_attempted": {"type": "integer"},
+                "convergence": {"type": "boolean"},
+                "convergence_run": {"type": "integer"},
+                "convergence_patience": {"type": "integer"},
+                "uncertainty_semantics": {"type": "string"},
+                "release_time_distribution": {"type": "string"}
+            }
+        }
+      },
+      "additionalProperties": True
+    }
+  },
+  "definitions": {
+    "WilsonInterval": {
+        "type": "object",
+        "additionalProperties": False,
+        "properties": {
+            "lower": {"type": "number", "minimum": 0, "maximum": 1},
+            "upper": {"type": "number", "minimum": 0, "maximum": 1},
+            "confidence_level": {"type": "number"},
+            "method": {"type": "string"},
+            "successes": {"type": "integer", "minimum": 0},
+            "trials": {"type": "integer", "minimum": 0}
+        }
+    },
+    "StabilityMetrics": {
+        "type": "object",
+        "additionalProperties": False,
+        "properties": {
+            "valid_runs": {"type": "integer", "minimum": 0},
+            "failed_runs": {"type": "integer", "minimum": 0},
+            "presence_rate": {"type": "number", "minimum": 0, "maximum": 1},
+            "ranked_rate": {"type": "number", "minimum": 0, "maximum": 1},
+            "top1_unconditional": {"type": "number", "minimum": 0, "maximum": 1},
+            "top3_unconditional": {"type": "number", "minimum": 0, "maximum": 1},
+            "top1_conditional_given_present": {"type": "number", "minimum": 0, "maximum": 1},
+            "top1_conditional_given_ranked": {"type": "number", "minimum": 0, "maximum": 1},
+            "presence_wilson_95": {"$ref": "#/definitions/WilsonInterval"},
+            "top1_wilson_95": {"$ref": "#/definitions/WilsonInterval"},
+            "top3_wilson_95": {"$ref": "#/definitions/WilsonInterval"},
+            "mean_rank": {"type": "number"},
+            "median_rank": {"type": "number"},
+            "rank_std": {"type": "number"},
+            "mean_score": {"type": "number"},
+            "score_std": {"type": "number"},
+            "evidence_coverage_mean": {"type": "number"},
+            "stability_class": {
+                "enum": [
+                    "HIGH_STABILITY",
+                    "MODERATE_STABILITY",
+                    "LOW_STABILITY",
+                    "UNSTABLE",
+                    "INSUFFICIENT_ENSEMBLE_EVIDENCE"
+                ]
+            },
+            "algorithm_version": {"type": "string"},
+            "configuration_version": {"type": "string"}
+        }
+    },
+    "CounterEvidenceItem": {
+        "type": "object",
+        "additionalProperties": False,
+        "properties": {
+            "evidence_id": {"type": "string"},
+            "category": {"type": "string"},
+            "polarity": {
+                "enum": ["SUPPORTING", "CONTRADICTING", "UNKNOWN", "NEUTRAL"]
+            },
+            "computability": {
+                "enum": ["COMPUTABLE", "NOT_COMPUTABLE", "MISSING_INPUT", "NOT_APPLICABLE"]
+            },
+            "severity": {"type": "string"},
+            "summary": {"type": "string"},
+            "quantitative_value": {"type": ["number", "null"]},
+            "threshold_or_reference": {"type": ["number", "null"]},
+            "source_module": {"type": "string"},
+            "source_fields": {"type": "array", "items": {"type": "string"}},
+            "limitations": {"type": "array", "items": {"type": "string"}}
+        }
+    },
+    "CounterEvidence": {
+        "type": "object",
+        "additionalProperties": False,
+        "properties": {
+            "supporting_items": {"type": "array", "items": {"$ref": "#/definitions/CounterEvidenceItem"}},
+            "contradicting_items": {"type": "array", "items": {"$ref": "#/definitions/CounterEvidenceItem"}},
+            "unknown_items": {"type": "array", "items": {"$ref": "#/definitions/CounterEvidenceItem"}},
+            "overall_counter_evidence_status": {
+                "enum": [
+                    "NO_MATERIAL_COUNTER_EVIDENCE",
+                    "LIMITED_COUNTER_EVIDENCE",
+                    "MATERIAL_COUNTER_EVIDENCE",
+                    "STRONG_COUNTER_EVIDENCE",
+                    "INSUFFICIENT_EVIDENCE"
+                ]
+            },
+            "support_count": {"type": "integer", "minimum": 0},
+            "contradiction_count": {"type": "integer", "minimum": 0},
+            "unknown_count": {"type": "integer", "minimum": 0},
+            "material_contradiction_count": {"type": "integer", "minimum": 0},
+            "algorithm_version": {"type": "string"},
+            "configuration_version": {"type": "string"}
+        }
+    },
+    "ReleaseHypothesis": {
+        "type": "object",
+        "additionalProperties": False,
+        "properties": {
+            "release_lat": {"type": "number", "minimum": -90, "maximum": 90},
+            "release_lon": {"type": "number", "minimum": -180, "maximum": 180},
+            "release_time": {"type": "string", "format": "date-time"},
+            "derivation_method": {"type": "string"},
+            "source_fields": {"type": "array", "items": {"type": "string"}},
+            "limitations": {"type": "array", "items": {"type": "string"}}
+        }
+    },
+    "ForwardConsistency": {
+        "type": "object",
+        "additionalProperties": False,
+        "properties": {
+            "hypotheses_tested": {"type": "integer", "minimum": 0},
+            "best_hypothesis": {"$ref": "#/definitions/ReleaseHypothesis"},
+            "forward_duration_hours": {"type": "number", "minimum": 0},
+            "centroid_distance_km": {"type": "number", "minimum": 0},
+            "overlap_fraction": {"type": "number", "minimum": 0, "maximum": 1},
+            "consistency_status": {
+                "enum": [
+                    "CONSISTENT",
+                    "PARTIALLY_CONSISTENT",
+                    "INCONSISTENT",
+                    "NOT_COMPUTABLE",
+                    "INSUFFICIENT_EVIDENCE"
+                ]
+            },
+            "supporting_observations": {"type": "array", "items": {"type": "string"}},
+            "contradicting_observations": {"type": "array", "items": {"type": "string"}},
+            "limitations": {"type": "array", "items": {"type": "string"}},
+            "algorithm_version": {"type": "string"},
+            "configuration_version": {"type": "string"}
+        }
+    },
+    "Candidate": {
+        "type": "object",
+        "additionalProperties": True,
+        "properties": {
+            "rank": {"type": ["integer", "null"], "minimum": 1},
+            "mmsi": {"type": "string"},
+            "vessel_name": {"type": ["string", "null"]},
+            "attribution": {
+                "type": "object",
+                "properties": {
+                    "score": {"type": "number"},
+                    "stability": {"type": "number", "description": "DEPRECATED: Use stability object instead"},
+                    "confidence": {"type": "number"},
+                    "status": {"type": "string"}
+                }
+            },
+            "evidence_for": {"type": "array", "description": "DEPRECATED: Use counter_evidence instead"},
+            "evidence_against": {"type": "array", "description": "DEPRECATED: Use counter_evidence instead"},
+            "trajectory": {
+                "type": "object",
+                "properties": {
+                    "distance_to_origin_km": {"type": "number"},
+                    "temporal_offset_hours": {"type": "number"},
+                    "drift_compatibility": {"type": "number", "description": "DEPRECATED: Use forward_consistency instead"}
+                }
+            },
+            "behavior": {"type": "object"},
+            "stability": {"$ref": "#/definitions/StabilityMetrics"},
+            "counter_evidence": {"$ref": "#/definitions/CounterEvidence"},
+            "forward_consistency": {"$ref": "#/definitions/ForwardConsistency"}
+        },
+        "required": ["mmsi"]
+    }
+  }
+}
+
+with open("packages/contracts/evidence.schema.json", "w") as f:
+    json.dump(schema, f, indent=2)

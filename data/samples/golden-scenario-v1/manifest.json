@@ -1,0 +1,61 @@
+{
+  "scenario_id": "SIH-ZENODO-ALPHA",
+  "scenario_name": "Zenodo Benchmark with Synthetic AIS",
+  "status": "ALL_DATASETS_LOCKED",
+  "validation_status": "READY_FOR_CROSS_VALIDATION",
+  "sar": {
+    "source_type": "REAL_DATA",
+    "provider": "Zenodo (M4D Oil Spill Dataset)",
+    "url": "https://zenodo.org/records/10848057",
+    "file_name": "data/raw/golden-scenario-v1/sar/S1A_IW_GRDH_1SDV_20180815T154400.tif",
+    "sha256": "10c2c749b349fd4b35ff6c859385b9fa1f0e853c4a349f107886bdb2514d54c3",
+    "bbox": {
+      "min_lon": 33.1,
+      "max_lon": 33.8,
+      "min_lat": 33.2,
+      "max_lat": 33.7
+    },
+    "timestamp": "2018-08-15T15:44:00Z",
+    "crs": "EPSG:4326"
+  },
+  "ais": {
+    "source_type": "SYNTHETIC_DEMO",
+    "provider": "ARPINIA Generator",
+    "file_name": "data/raw/golden-scenario-v1/ais/synthetic_ais_tracks.csv",
+    "sha256": "721bb71489eb0b70d83a8a02b22adc2f5e0e1ef3d8b49dd27c16d3c26b579afb"
+  },
+  "metocean": {
+    "source_type": "REAL_DATA",
+    "provider": "ERA5 & Copernicus Marine",
+    "era5_files": [
+      "data/raw/golden-scenario-v1/meteo/ERA5_wind_20180813_20180815.nc"
+    ],
+    "era5_sha256": [
+      "aeab34b0812a9c6f4bed17596bd89c34f8487b39e3253c7557cc8c9d34c61c10"
+    ],
+    "copernicus_files": [
+      "data/raw/golden-scenario-v1/ocean/CMEMS_currents_20180813_20180815.nc"
+    ],
+    "copernicus_sha256": [
+      "9d39e5963f6d0586d173e66b216c53a8ee15a5f0d12a5ceddcb27f681227f257"
+    ]
+  },
+  "ground_truth_reference": {
+    "source_type": "ISOLATED_TEST_FIXTURE",
+    "file_name": "ground_truth.json",
+    "sha256": "e4c3c4a851b0ba80fe6d598f318c61959e281000c8958a6a3b5e613da2d523de"
+  },
+  "spatial_extent": {
+    "crs": "EPSG:4326",
+    "min_lon": 33.1,
+    "max_lon": 33.8,
+    "min_lat": 33.2,
+    "max_lat": 33.7
+  },
+  "temporal_extent": {
+    "analysis_start": "2018-08-13T15:44:00Z",
+    "analysis_end": "2018-08-15T15:44:00Z",
+    "timezone": "UTC",
+    "temporal_resolution_required": "1H"
+  }
+}

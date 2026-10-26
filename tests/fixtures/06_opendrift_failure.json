@@ -1,0 +1,7 @@
+{
+  "_meta": {
+    "type": "TEST_DATA",
+    "description": "OpenDrift worker timeout"
+  },
+  "drift_status": "TIMEOUT"
+}

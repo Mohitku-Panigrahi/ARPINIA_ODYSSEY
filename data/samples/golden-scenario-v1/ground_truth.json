@@ -1,0 +1,10 @@
+{
+  "scenario_id": "SIH-ZENODO-ALPHA",
+  "true_source_mmsi": "123456789",
+  "spill_origin": {
+    "lat": 33.44,
+    "lon": 33.388
+  },
+  "spill_time": "2018-08-14T15:44:00Z",
+  "validation_notes": "Ground truth is isolated from production attribution engine."
+}

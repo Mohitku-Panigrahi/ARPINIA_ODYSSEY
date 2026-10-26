@@ -1,0 +1,46 @@
+{
+  "scenario_id": "GOLDEN-SCENARIO-V1",
+  "status": "RESEARCH_COMPLETE_PENDING_PHYSICAL_VALIDATION",
+  "selected_scenario": "MT Emerald (Eastern Mediterranean, Feb 2021)",
+  "candidates": [
+    {
+      "id": "EMERALD_MED_2021",
+      "score": 92,
+      "status": "SELECTED"
+    },
+    {
+      "id": "PERKASA_MALACCA_2019",
+      "score": 76,
+      "status": "REJECTED_TOO_TRIVIAL"
+    },
+    {
+      "id": "HUNTINGTON_BEACH_2021",
+      "score": 80,
+      "status": "REJECTED_PHYSICS_MISMATCH"
+    }
+  ],
+  "datasets": [
+    {
+      "type": "SAR",
+      "source": "Sentinel-1",
+      "availability": "VERIFIED_PUBLIC"
+    },
+    {
+      "type": "METOCEAN",
+      "source": "ERA5 & Copernicus Marine",
+      "availability": "VERIFIED_PUBLIC"
+    },
+    {
+      "type": "AIS",
+      "source": "Historical Subset",
+      "availability": "PENDING_ACQUISITION"
+    }
+  ],
+  "evidence": [],
+  "validation": {
+    "sar_downloaded": false,
+    "ais_downloaded": false,
+    "metocean_downloaded": false,
+    "overlap_verified": false
+  }
+}

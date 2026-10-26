@@ -1,0 +1,16 @@
+[
+  {
+    "source": "SYNTHETIC_DEMO",
+    "mmsi": "999999999",
+    "timestamp_utc": "2018-08-15T10:44:00Z",
+    "latitude": 33.5,
+    "longitude": 33.2
+  },
+  {
+    "source": "SYNTHETIC_DEMO",
+    "mmsi": "999999999",
+    "timestamp_utc": "2018-08-15T15:44:00Z",
+    "latitude": 33.6,
+    "longitude": 33.3
+  }
+]

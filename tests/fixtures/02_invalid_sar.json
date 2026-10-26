@@ -1,0 +1,7 @@
+{
+  "_meta": {
+    "type": "TEST_DATA",
+    "description": "SAR payload with missing geometry"
+  },
+  "geometry": null
+}

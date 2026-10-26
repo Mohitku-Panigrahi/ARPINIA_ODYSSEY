@@ -1,0 +1,47 @@
+name: Path Ownership Gate
+
+on:
+  pull_request:
+    branches: [ main ]
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  path-ownership:
+    name: Verify Pod Path Boundaries
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Evaluate PR Path Ownership
+        env:
+          PR_AUTHOR: ${{ github.event.pull_request.user.login }}
+          BASE_REF: ${{ github.base_ref }}
+        run: |
+          echo "Evaluating PR from Author: @$PR_AUTHOR targeting branch '$BASE_REF'"
+          
+          # Extract changed files relative to base ref
+          git fetch origin "$BASE_REF" --depth=1
+          CHANGED_FILES=$(git diff --name-only "origin/$BASE_REF"...HEAD)
+          
+          echo "=== Changed Files ==="
+          echo "$CHANGED_FILES"
+          echo "======================"
+          
+          if [ -z "$CHANGED_FILES" ]; then
+            echo "No files modified in this PR."
+            exit 0
+          fi
+          
+          # Execute Path Ownership Validator
+          python scripts/validation/check_path_ownership.py "$PR_AUTHOR" $CHANGED_FILES

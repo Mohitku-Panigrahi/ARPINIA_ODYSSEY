@@ -1,0 +1,78 @@
+# ARPINIA ODYSSEY — CODEOWNERS
+# Enforcement of Path-Scoped Review and Architectural Boundaries
+
+# DEFAULT / LEAD GOVERNANCE
+* @RudraNarayanMishra2142
+
+# POD A (AI / Computer Vision / Segmentation / LLM Engine)
+/models/** @Mohitku-Panigrahi @kamal-loachan @RudraNarayanMishra2142
+/services/ai-engine/** @Mohitku-Panigrahi @kamal-loachan @RudraNarayanMishra2142
+/docs/05-ai/** @Mohitku-Panigrahi @kamal-loachan @RudraNarayanMishra2142
+/tests/unit/test_ai_* @Mohitku-Panigrahi @kamal-loachan @RudraNarayanMishra2142
+/tests/unit/test_sar_* @Mohitku-Panigrahi @kamal-loachan @RudraNarayanMishra2142
+/tests/unit/test_model_* @Mohitku-Panigrahi @kamal-loachan @RudraNarayanMishra2142
+/tests/unit/test_cv_* @Mohitku-Panigrahi @kamal-loachan @RudraNarayanMishra2142
+/tests/unit/test_llm_* @Mohitku-Panigrahi @kamal-loachan @RudraNarayanMishra2142
+
+# POD B (Explicit Core Analytics, MetOcean, Physics, Attribution, API, Worker, Database, Infrastructure, Tooling)
+/packages/geo/** @amritkaur78190-sketch @RudraNarayanMishra2142
+/packages/metocean/** @amritkaur78190-sketch @RudraNarayanMishra2142
+/packages/reconstruction/** @amritkaur78190-sketch @RudraNarayanMishra2142
+/packages/ais/** @amritkaur78190-sketch @RudraNarayanMishra2142
+/packages/attribution/** @amritkaur78190-sketch @RudraNarayanMishra2142
+/packages/stability/** @amritkaur78190-sketch @RudraNarayanMishra2142
+/packages/counter_evidence/** @amritkaur78190-sketch @RudraNarayanMishra2142
+/packages/forward_validation/** @amritkaur78190-sketch @RudraNarayanMishra2142
+/packages/evidence/** @amritkaur78190-sketch @RudraNarayanMishra2142
+/packages/shared/** @amritkaur78190-sketch @RudraNarayanMishra2142
+
+/services/api/** @amritkaur78190-sketch @RudraNarayanMishra2142
+/services/worker/** @amritkaur78190-sketch @RudraNarayanMishra2142
+/database/** @amritkaur78190-sketch @RudraNarayanMishra2142
+/infrastructure/** @amritkaur78190-sketch @RudraNarayanMishra2142
+
+/scripts/dev/** @amritkaur78190-sketch @RudraNarayanMishra2142
+/scripts/golden/** @amritkaur78190-sketch @RudraNarayanMishra2142
+/scripts/validation/** @amritkaur78190-sketch @RudraNarayanMishra2142
+
+/docs/07-backend/** @amritkaur78190-sketch @RudraNarayanMishra2142
+/docs/08-deployment/** @amritkaur78190-sketch @RudraNarayanMishra2142
+
+/tests/unit/test_geo.py @amritkaur78190-sketch @RudraNarayanMishra2142
+/tests/unit/test_metocean.py @amritkaur78190-sketch @RudraNarayanMishra2142
+/tests/unit/test_reconstruction* @amritkaur78190-sketch @RudraNarayanMishra2142
+/tests/unit/test_ais* @amritkaur78190-sketch @RudraNarayanMishra2142
+/tests/unit/test_attribution* @amritkaur78190-sketch @RudraNarayanMishra2142
+/tests/unit/test_b4* @amritkaur78190-sketch @RudraNarayanMishra2142
+/tests/unit/test_stability* @amritkaur78190-sketch @RudraNarayanMishra2142
+/tests/unit/test_b7* @amritkaur78190-sketch @RudraNarayanMishra2142
+/tests/unit/test_b8* @amritkaur78190-sketch @RudraNarayanMishra2142
+/tests/unit/test_null_semantics.py @amritkaur78190-sketch @RudraNarayanMishra2142
+/tests/unit/test_golden_synthetic_ais.py @amritkaur78190-sketch @RudraNarayanMishra2142
+/tests/unit/test_leakage.py @amritkaur78190-sketch @RudraNarayanMishra2142
+/tests/unit/test_tamper_detection.py @amritkaur78190-sketch @RudraNarayanMishra2142
+/tests/fixtures/** @amritkaur78190-sketch @RudraNarayanMishra2142
+
+# POD C (Frontend, Web App, UI, Dossier, Visualization)
+/apps/web/** @chandana-2204 @panditrani83-crypto @RudraNarayanMishra2142
+/docs/06-frontend/** @chandana-2204 @panditrani83-crypto @RudraNarayanMishra2142
+/tests/unit/test_web_* @chandana-2204 @panditrani83-crypto @RudraNarayanMishra2142
+/tests/unit/test_ui_* @chandana-2204 @panditrani83-crypto @RudraNarayanMishra2142
+/tests/unit/test_frontend_* @chandana-2204 @panditrani83-crypto @RudraNarayanMishra2142
+
+# SHARED / LEAD CONTROLLED (Contracts, CI/CD, Governance, Manifests, Ground Truth, Research, Shared Tests)
+/packages/contracts/** @RudraNarayanMishra2142
+/.github/** @RudraNarayanMishra2142
+/AGENTS.md @RudraNarayanMishra2142
+/PRE-CODE-GATE.md @RudraNarayanMishra2142
+/SECURITY.md @RudraNarayanMishra2142
+/CONTRIBUTING.md @RudraNarayanMishra2142
+/CHANGELOG.md @RudraNarayanMishra2142
+/requirements.txt @RudraNarayanMishra2142
+/requirements-dev.txt @RudraNarayanMishra2142
+/data/samples/golden-scenario-v1/** @RudraNarayanMishra2142
+/docs/00-governance/** @RudraNarayanMishra2142
+/docs/09-testing/** @RudraNarayanMishra2142
+/rp/** @RudraNarayanMishra2142
+/tests/integration/** @RudraNarayanMishra2142
+/tests/e2e/** @RudraNarayanMishra2142

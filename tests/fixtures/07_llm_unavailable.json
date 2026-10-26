@@ -1,0 +1,7 @@
+{
+  "_meta": {
+    "type": "TEST_DATA",
+    "description": "LLM API returns 503 or times out"
+  },
+  "llm_status": 503
+}

@@ -1,0 +1,320 @@
+{
+  "scenario_id": "SIH-ZENODO-ALPHA",
+  "algorithm_version": "B7_1.0.0",
+  "configuration_version": "1.0.0",
+  "candidates": [
+    {
+      "candidate_id": "223456780",
+      "supporting_items": [
+        {
+          "evidence_id": "ee3ad2bd-b486-412f-a6cb-cbe01ad09d27",
+          "candidate_id": "223456780",
+          "category": "CLOSEST_APPROACH",
+          "polarity": "SUPPORTING",
+          "severity": "LOW",
+          "confidence": 1.0,
+          "computability": "COMPUTABLE",
+          "summary": "Very close approach (13.3 km) supports release hypothesis.",
+          "quantitative_value": 13.273320178519539,
+          "threshold_reference": 15.0,
+          "source_module": "B4",
+          "source_fields": [
+            "closest_approach_km"
+          ],
+          "algorithm_version": "B7_1.0.0",
+          "limitations": []
+        },
+        {
+          "evidence_id": "9b6e20f9-8bf6-405d-8ed5-3906a3c032c6",
+          "candidate_id": "223456780",
+          "category": "MONTE_CARLO_STABILITY",
+          "polarity": "SUPPORTING",
+          "severity": "LOW",
+          "confidence": 1.0,
+          "computability": "COMPUTABLE",
+          "summary": "High attribution stability; candidate is Top-1 in 100% of perturbations.",
+          "quantitative_value": 1.0,
+          "threshold_reference": 0.7,
+          "source_module": "B6",
+          "source_fields": [
+            "top1_stability"
+          ],
+          "algorithm_version": "B7_1.0.0",
+          "limitations": []
+        }
+      ],
+      "contradicting_items": [],
+      "unknown_items": [
+        {
+          "evidence_id": "c1ed6ede-e84e-44cd-b5d6-ed482901ebca",
+          "candidate_id": "223456780",
+          "category": "SPATIAL_COMPATIBILITY",
+          "polarity": "UNKNOWN",
+          "severity": "NONE",
+          "confidence": 1.0,
+          "computability": "MISSING_INPUT",
+          "summary": "Spatial data unavailable for candidate.",
+          "quantitative_value": null,
+          "threshold_reference": null,
+          "source_module": "B4",
+          "source_fields": [
+            "features_available.spatial_overlap"
+          ],
+          "algorithm_version": "B7_1.0.0",
+          "limitations": []
+        },
+        {
+          "evidence_id": "d68a8f93-3531-468b-812b-b7b8729283c2",
+          "candidate_id": "223456780",
+          "category": "TEMPORAL_COMPATIBILITY",
+          "polarity": "UNKNOWN",
+          "severity": "NONE",
+          "confidence": 1.0,
+          "computability": "MISSING_INPUT",
+          "summary": "Time inside region unavailable.",
+          "quantitative_value": null,
+          "threshold_reference": null,
+          "source_module": "B4",
+          "source_fields": [
+            "time_inside_region_seconds"
+          ],
+          "algorithm_version": "B7_1.0.0",
+          "limitations": []
+        }
+      ],
+      "support_count": 2,
+      "contradiction_count": 0,
+      "unknown_count": 2,
+      "contradiction_severity_summary": {
+        "NONE": 0,
+        "LOW": 0,
+        "MODERATE": 0,
+        "HIGH": 0
+      },
+      "overall_counter_evidence_status": "NO_MATERIAL_COUNTER_EVIDENCE"
+    },
+    {
+      "candidate_id": "323456781",
+      "supporting_items": [
+        {
+          "evidence_id": "61f62873-4877-424f-9346-a8db9f685887",
+          "candidate_id": "323456781",
+          "category": "CLOSEST_APPROACH",
+          "polarity": "SUPPORTING",
+          "severity": "LOW",
+          "confidence": 1.0,
+          "computability": "COMPUTABLE",
+          "summary": "Very close approach (13.3 km) supports release hypothesis.",
+          "quantitative_value": 13.273320178519539,
+          "threshold_reference": 15.0,
+          "source_module": "B4",
+          "source_fields": [
+            "closest_approach_km"
+          ],
+          "algorithm_version": "B7_1.0.0",
+          "limitations": []
+        }
+      ],
+      "contradicting_items": [],
+      "unknown_items": [
+        {
+          "evidence_id": "8690d2d4-f2d4-45ad-8f51-24001d90b832",
+          "candidate_id": "323456781",
+          "category": "SPATIAL_COMPATIBILITY",
+          "polarity": "UNKNOWN",
+          "severity": "NONE",
+          "confidence": 1.0,
+          "computability": "MISSING_INPUT",
+          "summary": "Spatial data unavailable for candidate.",
+          "quantitative_value": null,
+          "threshold_reference": null,
+          "source_module": "B4",
+          "source_fields": [
+            "features_available.spatial_overlap"
+          ],
+          "algorithm_version": "B7_1.0.0",
+          "limitations": []
+        },
+        {
+          "evidence_id": "0b97f297-0dc6-4dd4-9df0-a70aa62c3442",
+          "candidate_id": "323456781",
+          "category": "TEMPORAL_COMPATIBILITY",
+          "polarity": "UNKNOWN",
+          "severity": "NONE",
+          "confidence": 1.0,
+          "computability": "MISSING_INPUT",
+          "summary": "Time inside region unavailable.",
+          "quantitative_value": null,
+          "threshold_reference": null,
+          "source_module": "B4",
+          "source_fields": [
+            "time_inside_region_seconds"
+          ],
+          "algorithm_version": "B7_1.0.0",
+          "limitations": []
+        }
+      ],
+      "support_count": 1,
+      "contradiction_count": 0,
+      "unknown_count": 2,
+      "contradiction_severity_summary": {
+        "NONE": 0,
+        "LOW": 0,
+        "MODERATE": 0,
+        "HIGH": 0
+      },
+      "overall_counter_evidence_status": "NO_MATERIAL_COUNTER_EVIDENCE"
+    },
+    {
+      "candidate_id": "423456782",
+      "supporting_items": [
+        {
+          "evidence_id": "a47469b3-3a19-4236-9cfe-1df9615b23f3",
+          "candidate_id": "423456782",
+          "category": "CLOSEST_APPROACH",
+          "polarity": "SUPPORTING",
+          "severity": "LOW",
+          "confidence": 1.0,
+          "computability": "COMPUTABLE",
+          "summary": "Very close approach (13.3 km) supports release hypothesis.",
+          "quantitative_value": 13.273320178519539,
+          "threshold_reference": 15.0,
+          "source_module": "B4",
+          "source_fields": [
+            "closest_approach_km"
+          ],
+          "algorithm_version": "B7_1.0.0",
+          "limitations": []
+        }
+      ],
+      "contradicting_items": [],
+      "unknown_items": [
+        {
+          "evidence_id": "98d810da-5095-4307-ac7f-0cba6c51d3e6",
+          "candidate_id": "423456782",
+          "category": "SPATIAL_COMPATIBILITY",
+          "polarity": "UNKNOWN",
+          "severity": "NONE",
+          "confidence": 1.0,
+          "computability": "MISSING_INPUT",
+          "summary": "Spatial data unavailable for candidate.",
+          "quantitative_value": null,
+          "threshold_reference": null,
+          "source_module": "B4",
+          "source_fields": [
+            "features_available.spatial_overlap"
+          ],
+          "algorithm_version": "B7_1.0.0",
+          "limitations": []
+        },
+        {
+          "evidence_id": "e89e41d6-069b-4333-82a4-e68700f4ecbf",
+          "candidate_id": "423456782",
+          "category": "TEMPORAL_COMPATIBILITY",
+          "polarity": "UNKNOWN",
+          "severity": "NONE",
+          "confidence": 1.0,
+          "computability": "MISSING_INPUT",
+          "summary": "Time inside region unavailable.",
+          "quantitative_value": null,
+          "threshold_reference": null,
+          "source_module": "B4",
+          "source_fields": [
+            "time_inside_region_seconds"
+          ],
+          "algorithm_version": "B7_1.0.0",
+          "limitations": []
+        }
+      ],
+      "support_count": 1,
+      "contradiction_count": 0,
+      "unknown_count": 2,
+      "contradiction_severity_summary": {
+        "NONE": 0,
+        "LOW": 0,
+        "MODERATE": 0,
+        "HIGH": 0
+      },
+      "overall_counter_evidence_status": "NO_MATERIAL_COUNTER_EVIDENCE"
+    },
+    {
+      "candidate_id": "523456783",
+      "supporting_items": [
+        {
+          "evidence_id": "df87379d-d4d4-44ab-8291-7b99e199c581",
+          "candidate_id": "523456783",
+          "category": "CLOSEST_APPROACH",
+          "polarity": "SUPPORTING",
+          "severity": "LOW",
+          "confidence": 1.0,
+          "computability": "COMPUTABLE",
+          "summary": "Very close approach (13.3 km) supports release hypothesis.",
+          "quantitative_value": 13.273320178519539,
+          "threshold_reference": 15.0,
+          "source_module": "B4",
+          "source_fields": [
+            "closest_approach_km"
+          ],
+          "algorithm_version": "B7_1.0.0",
+          "limitations": []
+        }
+      ],
+      "contradicting_items": [],
+      "unknown_items": [
+        {
+          "evidence_id": "c483b8e2-3c25-4ae7-b162-2d3d0903ef53",
+          "candidate_id": "523456783",
+          "category": "SPATIAL_COMPATIBILITY",
+          "polarity": "UNKNOWN",
+          "severity": "NONE",
+          "confidence": 1.0,
+          "computability": "MISSING_INPUT",
+          "summary": "Spatial data unavailable for candidate.",
+          "quantitative_value": null,
+          "threshold_reference": null,
+          "source_module": "B4",
+          "source_fields": [
+            "features_available.spatial_overlap"
+          ],
+          "algorithm_version": "B7_1.0.0",
+          "limitations": []
+        },
+        {
+          "evidence_id": "a7c97ff2-5a3f-4a0b-b96d-891665fab19e",
+          "candidate_id": "523456783",
+          "category": "TEMPORAL_COMPATIBILITY",
+          "polarity": "UNKNOWN",
+          "severity": "NONE",
+          "confidence": 1.0,
+          "computability": "MISSING_INPUT",
+          "summary": "Time inside region unavailable.",
+          "quantitative_value": null,
+          "threshold_reference": null,
+          "source_module": "B4",
+          "source_fields": [
+            "time_inside_region_seconds"
+          ],
+          "algorithm_version": "B7_1.0.0",
+          "limitations": []
+        }
+      ],
+      "support_count": 1,
+      "contradiction_count": 0,
+      "unknown_count": 2,
+      "contradiction_severity_summary": {
+        "NONE": 0,
+        "LOW": 0,
+        "MODERATE": 0,
+        "HIGH": 0
+      },
+      "overall_counter_evidence_status": "NO_MATERIAL_COUNTER_EVIDENCE"
+    }
+  ],
+  "provenance": {
+    "b4_hash": "hash",
+    "b5_version": "v1.0.0"
+  },
+  "limitations": [
+    "Counter-evidence does not establish innocence and supporting evidence does not establish guilt."
+  ]
+}

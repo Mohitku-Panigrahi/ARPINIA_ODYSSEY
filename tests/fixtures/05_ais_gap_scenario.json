@@ -1,0 +1,12 @@
+{
+  "_meta": {
+    "type": "SYNTHETIC_DATA",
+    "description": "Vessel with 6-hour AIS gap at origin time"
+  },
+  "candidates": [
+    {
+      "mmsi": "999999999",
+      "ais_gap_hours": 6.5
+    }
+  ]
+}

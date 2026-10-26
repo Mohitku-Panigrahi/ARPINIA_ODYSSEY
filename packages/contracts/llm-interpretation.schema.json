@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "",
+  "investigation_id": "",
+
+  "summary": {
+    "title": "",
+    "executive_summary": "",
+    "incident_status": ""
+  },
+
+  "findings": [
+    {
+      "finding": "",
+      "severity": "LOW|MEDIUM|HIGH|CRITICAL",
+      "evidence_reference": ""
+    }
+  ],
+
+  "candidate_explanations": [
+    {
+      "mmsi": "",
+      "explanation": "",
+      "evidence_for": [],
+      "evidence_against": [],
+      "attribution_status": ""
+    }
+  ],
+
+  "recommended_next_actions": [
+    {
+      "priority": 1,
+      "action": "",
+      "reason": "",
+      "evidence_reference": ""
+    }
+  ],
+
+  "situational_awareness": {
+    "nearby_vessels": [],
+    "relevant_coastal_assets": [],
+    "potential_contacts": []
+  },
+
+  "warnings": [],
+
+  "limitations": [],
+
+  "model_metadata": {
+    "model": "",
+    "model_version": "",
+    "prompt_version": "",
+    "generated_at": ""
+  }
+}

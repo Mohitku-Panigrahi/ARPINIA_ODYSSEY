@@ -1,0 +1,16 @@
+# REPOSITORY MAP
+
+- `.github/`: CI/CD workflows, PR templates, CODEOWNERS. (Pod B)
+- `apps/web/`: Next.js Frontend. (Pod C)
+- `services/api/`: FastAPI backend orchestrator. (Pod B)
+- `services/worker/`: Redis/Celery queue for OpenDrift. (Pod B)
+- `services/ai-engine/`: PyTorch & Local LLM wrapper. (Pod A)
+- `database/`: PostGIS schemas and migrations. (Pod B)
+- `models/`: ML weights and configs. (Pod A)
+- `data/`: Raw/processed datasets and Golden Scenario. (Pod B)
+- `packages/contracts/`: Shared JSON schemas. (Governance)
+- `packages/geo/`: Shared geospatial utility functions. (Pod B)
+- `infrastructure/`: Docker Compose and deployment files. (Pod B)
+- `scripts/`: Dev tools and validators. (Pod B)
+- `tests/`: Unit/integration tests and fixtures. (Pod B)
+- `docs/`: System documentation. (Cross-Pod)
